@@ -54,31 +54,16 @@
         Fusce tincidunt turpis nec massa tincidunt, eu dictum quam mattis.
     </p>
 
-		<button class="button" onclick="showImage(1)">Show Image 1</button>
-		<button class="button" onclick="showImage(2)">Show Image 2</button>
 
-    <div class="image-container" id="imageContainer">
-        <!-- Images will appear here -->
-    </div>
+<model-viewer
+src="https://cmuilwijk.github.io/mywebsite2/teapot.glb"
+  camera-controls
+  autoplay>
+</model-viewer>
+
 	
-   <input type="file" id="imageInput" style="display: none;" accept="image/*">
-   
-    <script>
-        function showImage(imageNumber) {
-            var imageContainer = document.getElementById("imageContainer");
-			var imageInput = document.getElementById("imageInput");
-            // Trigger the click event on the file input element to allow the user to select an image.
-            imageInput.click();
-			       // When the user selects an image, this event will be triggered.
-            imageInput.onchange = function (event) {
-                var file = event.target.files[0];
-                var imageUrl = URL.createObjectURL(file);
-            imageContainer.innerHTML = '<img src="' + imageUrl + '" alt="Image">';
-            imageContainer.style.display = "block";
-			// <img src="image.jpg" alt="Your Image">
+	
 
-        }
-    </script>
 </body>
 
 </html>
