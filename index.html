@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            color: blue;
+        }
+        
+        h1, h2, h3 {
+            font-family: Times, "Times New Roman", serif;
+            font-weight: bold;
+            color: green;
+        }
+
+        .button {
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .image-container {
+            display: none;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lorem Ipsum Header</h1>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Maecenas consequat consequat varius. 
+        Nullam vulputate purus nec tellus elementum, vitae suscipit neque bibendum.
+		https://www.tesup.ie/product-page/atlasx7-wind-turbine-generator-for-homes-ie?gclid=Cj0KCQjw5f2lBhCkARIsAHeTvlh25VtWAHkICgsa0FFfT-e5ws11OIH1moPUiOtcad_bfOtRhT43UbcaAoYbEALw_wcB
+		
+    </p>
+
+    <h2>Lorem Ipsum Subheader</h2>
+    <p>
+        Sed nec turpis eu metus volutpat varius. 
+        Fusce tincidunt turpis nec massa tincidunt, eu dictum quam mattis.
+    </p>
+
+		<button class="button" onclick="showImage(1)">Show Image 1</button>
+		<button class="button" onclick="showImage(2)">Show Image 2</button>
+
+    <div class="image-container" id="imageContainer">
+        <!-- Images will appear here -->
+    </div>
+	
+   <input type="file" id="imageInput" style="display: none;" accept="image/*">
+   
+    <script>
+        function showImage(imageNumber) {
+            var imageContainer = document.getElementById("imageContainer");
+			var imageInput = document.getElementById("imageInput");
+            // Trigger the click event on the file input element to allow the user to select an image.
+            imageInput.click();
+			       // When the user selects an image, this event will be triggered.
+            imageInput.onchange = function (event) {
+                var file = event.target.files[0];
+                var imageUrl = URL.createObjectURL(file);
+            imageContainer.innerHTML = '<img src="' + imageUrl + '" alt="Image">';
+            imageContainer.style.display = "block";
+			// <img src="image.jpg" alt="Your Image">
+
+        }
+    </script>
+</body>
+
+</html>
