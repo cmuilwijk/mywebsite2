@@ -50,7 +50,7 @@
         dir : [1,0],
         size: 2,
         newSize: 2,
-        speed: 300,
+        speed: 400,
         hitSelf: function(x,y) {
             for (var i=0;i<this.size-1;i++) {
                 if (x==this.points[0][i]) if (y==this.points[1][i]) { return true; }
@@ -258,7 +258,7 @@ var firstWrongEq = equationmatrix[0][1];   // '$$X=\\frac{2}{x}$$'
         snake.dir = [1,0];
         snake.size = 2;
         snake.newSize = 2;
-        snake.speed = 250;
+        snake.speed = 400;
         setRandomPosition();
 		setRandomPositionr();
 		crawl();
