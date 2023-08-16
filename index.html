@@ -168,25 +168,15 @@ var firstWrongEq = equationmatrix[0][1];   // '$$X=\\frac{2}{x}$$'
 	
 	
 
-const currentlevel = 19;
 
-	sboard.create('text',[ 0,24,  function(){return equationmatrix[currentlevel-1][0] } ], {
-    fontSize: 15, color:'green', useMathJax: true});
-	sboard.create('text',[ 0,21.5,  function(){return equationmatrix[currentlevel-1][1]}], {
-    fontSize: 15, color:'red', useMathJax: true});
-	
-	//sboard.create('text',[ 5,24,  function(){return righteq[currentlevel+1]}], {
-    //fontSize: 15, color:'green', useMathJax: true});
-	//sboard.create('text',[ 5,21.5,  function(){return wrongeq[currentlevel+1]}], {
-    //fontSize: 15, color:'red', useMathJax: true});
 
 	var curve = sboard.create('curve', snake.points , {strokeWidth:20,strokeOpacity:0.5});
     
 	var point = sboard.create('point', [
         Math.round(Math.random()*18)+1,Math.round(Math.random()*18)+1],{
 		withLabel:true,
-		strokeColor:'green',
-		fillColor:'green',
+		strokeColor:'blue',
+		fillColor:'blue',
 		strokeWidth:10,
 		name: equationmatrix[0][0],
 		label: {useMathJax:true}
@@ -195,8 +185,8 @@ const currentlevel = 19;
 	var pointr = sboard.create('point', [
         Math.round(Math.random()*18)+1,Math.round(Math.random()*18)+1], {
 		withLabel:true,
-		strokeColor:'red',
-		fillColor:'red',
+		strokeColor:'blue',
+		fillColor:'blue',
 		strokeWidth:10,
 		name: equationmatrix[0][1],
 		label: {useMathJax: true}
