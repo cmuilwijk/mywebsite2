@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>JSXGraph template</title>
+    <title>ThermoRacer: Brush up your Thermodynamics knowledge while playing Snake</title>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <link href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js" type="text/javascript" charset="UTF-8"></script>
@@ -17,12 +17,30 @@
   
   </head>
   <body>
-  <p> the Snake game goes here </p>
+  <h1> ThermoRacerSnake</h1>
+  <h3> Brush up your Thermodynamics knowledge while playing Snake</h3>
+  
+  <p> Recapitulate your thermodynamics classes by recogising the correct equation or statement in
+  an interactive and playful way.
+  This Thermodynamics correct equation challenge is based on the classic Snake game,
+well known from legacy Nokia mobile phones such as the Nokia 6110, 5410, and the later Snake II on the Nokia 3310.
+</p>
+<p>
+In this game, not one, but two seemingly identical pieces of food appear in random locations. 
+However, only one point is annotated with a correct thermodynamic expression.
 
+Navigate to this correct piece of food using the arrows keys on your keyboard 
+(up, down, left and right) and train your thermodynamics and descision skills. 
+Can you make it to level 30?
+ </p>
+
+<p>
+This game is still under development. For suggestions or bug reports email: corne.muilwijk@dcu.ie
+</p>
 
 
 <form><input type="button" onClick="startGame()" value="start game"></form>
-<div id="snakebox" class="jxgbox" style="width:600px; height:600px; overflow:hidden; "></div>
+<div id="snakebox" class="jxgbox" style="width:800px; height:800px; overflow:hidden; "></div>
 
 <script>
 
@@ -50,7 +68,7 @@
         dir : [1,0],
         size: 2,
         newSize: 2,
-        speed: 400,
+        speed: 300,
         hitSelf: function(x,y) {
             for (var i=0;i<this.size-1;i++) {
                 if (x==this.points[0][i]) if (y==this.points[1][i]) { return true; }
@@ -100,19 +118,43 @@ var equationmatrix = [
    '$$P_{sat} \\sim  a+bT $$'], //15
   ['$$0 \\lt x \\lt 1 \\rightarrow T=T_{sat} $$', '$$0 \\lt x \\lt 1 \\rightarrow T \\neq T_{sat}  $$'], //16
   ['$$0 \\lt x \\lt 1 \\rightarrow P=P_{sat} $$', '$$0 \\lt x \\lt 1 \\rightarrow P \\neq P_{sat}  $$'], //17
-  ['$$ h=h_f \\rightarrow x=0 $$', '$$h=h_f \\rightarrow x=1 $$'], //18
-  ['$$ h=h_g \\rightarrow x=1 $$', '$$h=h_g \\rightarrow x=0 $$'], //19
-  
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
+  ['$$0 \\lt x \\lt 1 \\rightarrow P=P_{sat} \\text{ AND } T=T_{sat} $$', 
+   '$$0 \\lt x \\lt 1 \\rightarrow P=P_{sat} \\text{ OR }  T=T_{sat} $$' ], //18
+  ['$$ h=h_f \\rightarrow x=0 $$', '$$h=h_f \\rightarrow x=1 $$'], //19
+  ['$$ h=h_g \\rightarrow x=1 $$', '$$h=h_g \\rightarrow x=0 $$'], //20
+  ['$$PV = mRT $$', 
+   '$$PV =  RT $$'], //21
+  ['$$P\\nu = RT $$', 
+   '$$P\\nu = mRT  $$'], //22
+  ['$$c_p > c_v $$', '$$c_p \\lt c_v $$'], //23
+  ['$$k=\\frac{c_p}{c_v} $$', 
+   '$$k=\\frac{c_v}{c_p} $$'], //24
+  ['$$c_v = \\left( \\frac{\\partial u}{\\partial T} \\right)_\\nu $$', 
+   '$$c_v = \\left( \\frac{\\partial u}{\\partial T} \\right)_P  $$'], //25
+  ['$$c_v = \\left( \\frac{\\partial u}{\\partial T} \\right)_\\nu $$', 
+   '$$c_v = \\left( \\frac{\\partial h}{\\partial T} \\right)_\\nu $$'], //26
+  ['$$c_p = \\left( \\frac{\\partial h}{\\partial T} \\right)_P $$', 
+   '$$c_p = \\left( \\frac{\\partial u}{\\partial T} \\right)_P $$'], //27  
+  ['$$c_p = \\left( \\frac{\\partial h}{\\partial T} \\right)_P $$', 
+   '$$c_p = \\left( \\frac{\\partial h}{\\partial T} \\right)_\\nu $$'], //28   
+  ['$$\\Delta u_{1 \\rightarrow 2} = \\int_{1}^{2} c_v dT $$', 
+   '$$\\Delta u_{1 \\rightarrow 2} = \\int_{1}^{2} c_p dT $$'], //29
+  ['$$\\Delta h_{1 \\rightarrow 2} = \\int_{1}^{2} c_p dT $$', 
+   '$$\\Delta h_{1 \\rightarrow 2} = \\int_{1}^{2} c_v dT $$'], //30
+  ['$$h_2-h_1 \\approx c_p (T_2 -T_1) $$',
+   '$$h_2-h_1 \\approx c_v (T_2 -T_1) $$'], //31
+  ['$$u_2-u_1 \\approx c_v (T_2 -T_1) $$',
+   '$$u_2-u_1 \\approx c_p (T_2 -T_1) $$'], //32
+  ['$$PV^n = \\text{constant:  polytropic process} $$', 
+   '$$PV^n = \\text{constant:  isothermal process}  $$'], //33
+  ['$$PV = \\text{constant:  isothermal process} $$', 
+   '$$PV = \\text{constant:  polytropic process}  $$'], //34
+  ['$$W_b = \\int_1^2 P dV \\quad \\text{(closed system)} $$', 
+   '$$W_b = \\int_1^2 V dP \\quad \\text{(closed system)} $$'],//35
+  ['$$\\text{Isothermal proccess:} \\quad W_b = P_1 V_1 \\ln \\left(\\frac{V_1}{V_2}  \\right) $$', 
+   '$$\\text{Isothermal proccess:} \\quad W_b = \\frac{P_2 V_2 - P_1 V_1}{1-n} $$'], //36
+  ['$$\\text{Adiabatic process:} \\quad Q=0 $$', 
+   '$$\\text{Adiabatic process:} \\quad Q \\neq 0 $$'], //37
   ['$$ $$', '$$ $$'],
   ['$$ $$', '$$ $$'],
   ['$$ $$', '$$ $$'],
@@ -166,17 +208,33 @@ var equationmatrix = [
 var firstRightEq = equationmatrix[0][0];   // '$$X=\\frac{2}{x}$$'
 var firstWrongEq = equationmatrix[0][1];   // '$$X=\\frac{2}{x}$$'
 	
+var development_mode = 0; // 0: no;  1: yes
+const currentlevel = 36;
+
+var colors = [['blue','blue'],  // 1
+             ['green', 'red']];
 	
 
-
+if (development_mode==1){
+	sboard.create('text',[ 0,24,  function(){return equationmatrix[currentlevel-1][0] } ], {
+    fontSize: 12, color:'green', useMathJax: true});
+	sboard.create('text',[ 0,21.5,  function(){return equationmatrix[currentlevel-1][1]}], {
+    fontSize: 12, color:'red', useMathJax: true});
+	}
+	
+	//sboard.create('text',[ 5,24,  function(){return righteq[currentlevel+1]}], {
+    //fontSize: 15, color:'green', useMathJax: true});
+	//sboard.create('text',[ 5,21.5,  function(){return wrongeq[currentlevel+1]}], {
+    //fontSize: 15, color:'red', useMathJax: true});
 
 	var curve = sboard.create('curve', snake.points , {strokeWidth:20,strokeOpacity:0.5});
     
 	var point = sboard.create('point', [
         Math.round(Math.random()*18)+1,Math.round(Math.random()*18)+1],{
 		withLabel:true,
-		strokeColor:'blue',
-		fillColor:'blue',
+		fixed: true,
+		strokeColor: colors[development_mode][0],
+		fillColor:colors[development_mode][0],
 		strokeWidth:10,
 		name: equationmatrix[0][0],
 		label: {useMathJax:true}
@@ -185,8 +243,9 @@ var firstWrongEq = equationmatrix[0][1];   // '$$X=\\frac{2}{x}$$'
 	var pointr = sboard.create('point', [
         Math.round(Math.random()*18)+1,Math.round(Math.random()*18)+1], {
 		withLabel:true,
-		strokeColor:'blue',
-		fillColor:'blue',
+		fixed: true,
+		strokeColor:colors[development_mode][1],
+		fillColor:colors[development_mode][1],
 		strokeWidth:10,
 		name: equationmatrix[0][1],
 		label: {useMathJax: true}
@@ -194,12 +253,65 @@ var firstWrongEq = equationmatrix[0][1];   // '$$X=\\frac{2}{x}$$'
 		
 	var t = sboard.create('text', [2,1,function() { return snake.size; }], {fontSize:28});
 
+// function to exclude an integer from setting the second y coordinate to prevent overlapping text.
+	function getRandomInteger(min, max, exclude) {
+		let randomNum;
+  
+		do {
+			randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+		} while (randomNum === exclude);
+
+		return randomNum;
+	}
+
+	
+
+	var setRandomPosition2 = function()  {
+       // let newX = Math.round(Math.random() * 18) + 1;
+	//	let newY = Math.round(Math.random() * 18) + 1;
+	//	let newX2 = Math.round(Math.random() * 18) + 1;
+		//var newY2 = Math.round(Math.random() * 18) + 1;
+		//
+		//let newY2 = getRandomInteger(1, 20, newY);
+		point.setPositionDirectly(JXG.COORDS_BY_USER,
+            [Math.round(Math.random()*18)+1,
+            Math.round(Math.random()*18)+1]);
+			point.name = equationmatrix[snake.newSize-2][0];
+			
+		pointr.setPositionDirectly(JXG.COORDS_BY_USER,
+            [Math.round(Math.random()*18)+1,
+            Math.round(Math.random()*18)+1]);
+			pointr.name = equationmatrix[snake.newSize-2][1];	
+		}
+	
+	// something goes very strange when trying to use setRandompositions. Copy setrandomposition to*Original and add other bits.
 	var setRandomPosition = function()  {
+	    var newX = Math.round(Math.random() * 18) + 1;
+		var newY = Math.round(Math.random() * 18) + 1;
+		var newX2 = Math.round(Math.random() * 18) + 1;
+		//var newY2 = Math.round(Math.random() * 18) + 1;
+		//
+		var newY2 = getRandomInteger(1, 19, newY);
+	
+	
+        point.setPositionDirectly(JXG.COORDS_BY_USER,
+            [newX,
+             newY]);
+			point.name = equationmatrix[snake.newSize-2][0];
+			
+			pointr.setPositionDirectly(JXG.COORDS_BY_USER,
+            [newX2,
+             newY2]);
+			pointr.name = equationmatrix[snake.newSize-2][1];
+    }
+	
+	var setRandomPositionOriginal = function()  {
         point.setPositionDirectly(JXG.COORDS_BY_USER,
             [Math.round(Math.random()*18)+1,
             Math.round(Math.random()*18)+1]);
 			point.name = equationmatrix[snake.newSize-2][0];
-    }
+	}
+	
 	
 	var setRandomPositionr = function()  {
         pointr.setPositionDirectly(JXG.COORDS_BY_USER,
@@ -242,9 +354,10 @@ var firstWrongEq = equationmatrix[0][1];   // '$$X=\\frac{2}{x}$$'
 			else {
             if (x==point.X()) if (y==point.Y()) {
                 snake.newSize += 1;
-                snake.speed -= 10;
+                snake.speed -= 1;
                 setRandomPosition();
-				setRandomPositionr();
+				//setRandomPositionr();
+				
 				//updateRenderer();
 				sboard.update();
             }
@@ -258,9 +371,10 @@ var firstWrongEq = equationmatrix[0][1];   // '$$X=\\frac{2}{x}$$'
         snake.dir = [1,0];
         snake.size = 2;
         snake.newSize = 2;
-        snake.speed = 400;
+        snake.speed = 300;
         setRandomPosition();
-		setRandomPositionr();
+		//setRandomPositionr();
+
 		crawl();
     }
 </script>
