@@ -29,9 +29,9 @@ well known from legacy Nokia mobile phones such as the Nokia 6110, 5410, and the
 In this game, not one, but two seemingly identical pieces of food appear in random locations. 
 However, only one point is annotated with a correct thermodynamic expression.
 
-Navigate to this correct piece of food using the arrows keys on your keyboard 
+Hit the "start game" button, navigate to this correct piece of food using the arrows keys on your keyboard 
 (up, down, left and right) and train your thermodynamics and descision skills. 
-Can you make it to level 30?
+Can you make it to level 60?
  </p>
 
 <p>
@@ -96,8 +96,8 @@ var equationmatrix = [
    '$$u=h+P\\nu $$'], // 4
   ['$$x=\\frac{m_{vapour}}{m_{total}}$$', 
    '$$x=\\frac{m_{vapour}}{m_{liquid}}$$'], //5
-  ['$$GWP CO_2 \\lt CH_4 $$', 
-   '$$GWP CO_2 \\gt CH_4 $$'], // 6 
+  ['$$GWP~CO_2 \\lt CH_4 $$', 
+   '$$GWP~CO_2 \\gt CH_4 $$'], // 6 
   ['$$\\nu_{avg} = \\nu_f + x(\\nu_g - \\nu_f)$$',
    '$$\\nu_{avg} = \\nu_g + x(\\nu_f - \\nu_g)$$'], //7
   ['$$x=\\frac{\\nu-\\nu_f}{\\nu_g-\\nu_f}$$', 
@@ -155,22 +155,44 @@ var equationmatrix = [
    '$$\\text{Isothermal proccess:} \\quad W_b = \\frac{P_2 V_2 - P_1 V_1}{1-n} $$'], //36
   ['$$\\text{Adiabatic process:} \\quad Q=0 $$', 
    '$$\\text{Adiabatic process:} \\quad Q \\neq 0 $$'], //37
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
-  ['$$ $$', '$$ $$'],
+  ['$$c_p = c_\\nu + R $$', '$$c_p = c_\\nu -R $$'], //38
+  ['$$T \\lt T_{sat}: h(P,T) \\approx h_{f~@~T} + \\nu_{f~@~T} (P-P_{sat})  $$', 
+   '$$T \\gt T_{sat}: h(P,T) \\approx h_{g~@~T} + \\nu_{g~@~T} (P-P_{sat})  $$'],  //39
+  ['$$Q=\\int_{t_1}^{t_2} \\dot{Q} dt $$', 
+   '$$\\dot{Q}=\\int_{t_1}^{t_2} Q dt  $$'], //40
+  ['$$\\int_1^2 dV  = V_2 - V_1 $$', '$$\\int_1^2 dV  = V_{12}  $$'], //41
+  ['$$\\int_1^2 \\delta W  = W_{12} $$', '$$\\int_1^2 \\delta W  = W_{2} - W_1  $$'], //42
+  ['$$\\dot{W}_{shaft}=\\omega T $$', '$$\\dot{W}_{shaft}=2\\pi\\omega T $$'], //43
+  ['$$\\dot{W}_{shaft}=2 \\pi \\dot{n} T $$', '$$\\dot{W}_{shaft}=\\frac{\\dot{n}}{2\\pi} T $$'], //44
+  ['$$\\dot{m} = \\rho \\dot{V} $$', '$$\\dot{m} =  \\frac{ \\dot{V}}{\\rho} $$'],//45
+  ['$$\\frac{dm_{system}}{dt} = \\dot{m}_{in} - \\dot{m}_{out}$$', 
+   '$$\\frac{dm_{system}}{dt} = \\dot{m}_{out} - \\dot{m}_{in}$$'], //46
+  ['$$\\dot{Q}_{conduction} = -k A \\frac{dT}{dx} $$', 
+   '$$\\dot{Q}_{conduction} = h A (T_{surface}-T_\\infty)  $$'], //47
+  ['$$\\dot{Q} \\gt 0: \\text{heat entering system} $$', 
+   '$$\\dot{Q} \\gt 0: \\text{heat leaving system}  $$'], //48
+  ['$$\\dot{W} \\gt 0: \\text{work done by system} $$', 
+   '$$\\dot{W} \\gt 0: \\text{work done on system}  $$'], //49   
+  ['$$\\eta_{th} = \\frac{W_{net,out}}{Q_{in}}$$', 
+   '$$\\eta_{th} = \\frac{Q_{in}}{W_{net,out}} $$'], //50
+  ['$$COP_R = \\frac{Q_L}{W_{net,in}} $$', 
+   '$$COP_R = \\frac{Q_H}{W_{net,in}} $$'], //51
+  ['$$COP_{HP} = \\frac{Q_H}{W_{net,in}} $$', 
+   '$$COP_{HP} = \\frac{Q_L}{W_{net,in}} $$'], //52
+  ['$$COP_{HP} = COP_R + 1 $$', 
+   '$$COP_{HP} = COP_R - 1 $$'],//53
+  ['$$\\text{Carnot Cycle: heat engine} $$', '$$\\text{Carnot Cycle: heat pump}  $$'], //54
+  ['$$\\text{Reversed Carnot Cycle: heat pump} $$', 
+   '$$\\text{Reversed Carnot Cycle: heat engine}  $$'], //55
+  ['$$\\text{Isothermal heat transfer: reversible} $$', 
+   '$$\\text{Isothermal heat transfer: irreversible} $$'], //56
+  ['$$\\text{Unrestrained expansion: irreversible} $$', 
+   '$$\\text{Unrestrained expansion: reversible} $$'], //57
+  ['$$\\text{Carnot Cycle: theoretically reversible} $$', 
+   '$$\\text{Carnot Cycle: irreversible} $$'], //58
+  ['$$\\eta_{th} \\le \\eta_{th,Carnot} $$', 
+   '$$\\eta_{th} \\ge \\eta_{th,Carnot} $$'], //59
+  ['$$\\text{The End - Well Done} $$', '$$\\text{The End - Well Done} $$'], //60
   ['$$ $$', '$$ $$'],
   ['$$ $$', '$$ $$'],
   ['$$ $$', '$$ $$'],
@@ -209,7 +231,7 @@ var firstRightEq = equationmatrix[0][0];   // '$$X=\\frac{2}{x}$$'
 var firstWrongEq = equationmatrix[0][1];   // '$$X=\\frac{2}{x}$$'
 	
 var development_mode = 0; // 0: no;  1: yes
-const currentlevel = 36;
+const currentlevel = 60;
 
 var colors = [['blue','blue'],  // 1
              ['green', 'red']];
@@ -292,7 +314,6 @@ if (development_mode==1){
 		//var newY2 = Math.round(Math.random() * 18) + 1;
 		//
 		var newY2 = getRandomInteger(1, 19, newY);
-	
 	
         point.setPositionDirectly(JXG.COORDS_BY_USER,
             [newX,
