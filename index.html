@@ -314,7 +314,7 @@ if (development_mode==1){
 		//var newY2 = Math.round(Math.random() * 18) + 1;
 		//
 		var newY2 = getRandomInteger(1, 19, newY);
-	
+		var levelnumber = Math.floor(Math.random() * 60);
         point.setPositionDirectly(JXG.COORDS_BY_USER,
             [newX,
              newY]);
@@ -323,14 +323,14 @@ if (development_mode==1){
 			pointr.setPositionDirectly(JXG.COORDS_BY_USER,
             [newX2,
              newY2]);
-			pointr.name = equationmatrix[snake.newSize-2][1];
+			pointr.name = equationmatrix[levelnumber][1];
     }
 	
 	var setRandomPositionOriginal = function()  {
         point.setPositionDirectly(JXG.COORDS_BY_USER,
             [Math.round(Math.random()*18)+1,
             Math.round(Math.random()*18)+1]);
-			point.name = equationmatrix[snake.newSize-2][0];
+			point.name = equationmatrix[levelnumber][0];
 	}
 	
 	
